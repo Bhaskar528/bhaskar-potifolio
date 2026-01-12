@@ -1,0 +1,176 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.resume-section {
+  width: 100%;
+  background: #000000;
+  padding: 90px 6%;
+}
+
+/* =========================
+   CONTAINER LAYOUT
+========================= */
+.resume-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+.resume-left h2 {
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.resume-desc {
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.resume-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tab {
+  padding: 18px;
+  border-radius: 14px;
+  border: none;
+  background: #2f3947;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: #374151;
+}
+
+.tab.active {
+  background: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.resume-right h2 {
+  font-size: 46px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.resume-right h2 span {
+  color: #38bdf8;
+}
+
+.resume-right p {
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+/* =========================
+   EXPERIENCE CARD
+========================= */
+.experience-card {
+  background: #2f3947;
+  color: #000000;
+  border-radius: 22px;
+  padding: 22px;
+  height: 280px;
+  width: 100%;
+  overflow: hidden;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.7s ease forwards;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Stagger animation */
+.experience-card:nth-child(1) { animation-delay: 0.1s; }
+.experience-card:nth-child(2) { animation-delay: 0.2s; }
+.experience-card:nth-child(3) { animation-delay: 0.3s; }
+.experience-card:nth-child(4) { animation-delay: 0.4s; }
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.experience-year {
+  font-size: 18px;
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.experience-role {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.experience-desc {
+  font-size: 16px;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* =========================
+   FADE ANIMATION
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+  .resume-container {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-left {
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,186 @@
+.services-section {
+  min-height: 100vh;
+  padding: 80px 8%;
+  background: #000000;
+}
+
+.services-title {
+  text-align: center;
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.services-title span {
+  color: #38bdf8;
+}
+
+/* Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.service-card {
+  background: #1e293b;
+  padding: 40px 30px;
+  border-radius: 16px;
+  color: #ffffff;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.service-card h3 {
+  font-size: 28px;
+  margin: 20px 0 15px;
+}
+
+.service-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+/* Icon */
+.service-icon {
+  font-size: 40px;
+  color: #ffffff;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  background: #273449;
+  border-color: #38bdf8;
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.25);
+}
+
+
+/* Active card */
+.service-card.active {
+  border: 2px solid #38bdf8;
+  background: #334155;
+}
+
+.service-card.active h3,
+.service-card.active p,
+.service-card.active .service-icon {
+  color: #38bdf8;
+}
+
+.service-icon-img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+
+
+.service-card img,
+.service-card .service-icon {
+  transition: all 0.4s ease;
+}
+
+.service-card:hover img,
+.service-card:hover .service-icon {
+  transform: rotate(-8deg) scale(1.15);
+  filter: drop-shadow(0 0 8px #38bdf8);
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card h3 {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.service-card p {
+  color: #cbd5e1;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #38bdf8;
+}
+
+.service-card:hover p {
+  color: #e2e8f0;
+}
+
+.service-card.active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+.service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFadeUp 0.6s ease forwards;
+}
+
+.service-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.service-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.service-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.service-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.service-card:nth-child(5) {
+  animation-delay: 1s;
+}
+.service-card:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+@keyframes cardFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Initial hidden state */
+.services-section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: serviceFadeIn 0.8s ease forwards;
+}
+
+/* Keyframes */
+@keyframes serviceFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}

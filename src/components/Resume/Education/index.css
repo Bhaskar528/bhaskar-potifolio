@@ -1,0 +1,102 @@
+.education-right {
+  width: 100%;
+  animation: fadeUp 0.6s ease-in-out;
+}
+
+.education-heading {
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+
+.education-heading span {
+  color: #38bdf8;
+}
+
+.education-desc {
+  max-width: 850px;
+  font-size: 16px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.education-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.education-card {
+  background-color: #2f3947;
+  padding: 18px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  animation: slideUp 0.6s ease forwards;
+}
+
+.education-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* YEAR */
+.education-year {
+  color: #38bdf8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* TITLE */
+.education-title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* INSTITUTE */
+.education-institute {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.education-institute p {
+  margin: 0;
+  color: #e5e7eb;
+}
+
+/* DESCRIPTION */
+.education-text {
+  font-size: 15px;
+  color: #d1d5db;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .education-cards {
+    grid-template-columns: 1fr;
+  }
+}
